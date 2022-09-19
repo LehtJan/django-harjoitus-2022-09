@@ -1,5 +1,4 @@
 """varaukset URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
@@ -16,6 +15,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from varauskalenteri.views import tapahtumalistaus, varaa_tapahtuma
+
 urlpatterns = [
+    path('varaus/', tapahtumalistaus),
+    path('varaus/<int:id>/', varaa_tapahtuma),
     path('admin/', admin.site.urls),
 ]
